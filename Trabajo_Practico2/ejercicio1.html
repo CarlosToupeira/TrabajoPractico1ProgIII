@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <style>
+        .tituloPrincipal {
+            width: 100%;
+            border: 10px solid red;
+            display: inline-block;
+            justify-content: center;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .parrafo {
+            font-size: 30px;
+            background-color: rgb(17, 255, 255);
+        }
+    </style>
+</head>
+
+
+<body>
+    <h1 id="tituloPrincipal" class="tituloPrincipal">Ejercicio 1</h1> <!--titulo principal-->
+
+    <p class="parrafos"> Parrafo 1 </p> <!--parrafo x2 -->
+    <p class="parrafos"> Parrafo 2 </p>
+
+    <div id="contenedor"> <!-- contenedor-->
+        <ul>
+            <li class="li"> regla numero 1</li>
+            <li class="li"> regla numero 2</li>
+            <li class="li"> regla numero 3</li>
+        </ul>
+    </div>
+
+    <script>//seleccionar titulo y modificar letras//
+        let title = document.getElementById("tituloPrincipal")
+        title.textContent = "Tp2 Ejercicio 1 /'(cambiado)/'"
+        console.log(title.textContent)
+    </script>
+
+    <script>//seleccionar parrafo y cambiar colores//
+        let parrafo = document.getElementsByClassName("parrafos");
+        for (let i = 0; i < parrafo.length; i++) {
+
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+
+            parrafo[i].style.color = `rgb(${r}, ${g}, ${b})`;
+        }
+
+        let lis = document.querySelectorAll("li");
+        for (let i = 0; i < lis.length; i++) {
+            lis[i].textContent += "test";
+        }
+    </script>
+</body>
+
+</html>
